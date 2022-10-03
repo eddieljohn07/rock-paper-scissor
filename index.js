@@ -7,17 +7,29 @@ function getComputerChoice(){
     } else{
         character = 'summoner'
     }
-    console.log(character);
+    return character;
 }
-function playRound(){
+function playRound(_playerSelection,_computerSelection){
     _computerSelection = getComputerChoice()
-    _playerSelection = prompt[('Choose your figher: ').toLowerCase]
+    _playerSelection = prompt('Choose your bet: ').toLowerCase();
     if (_playerSelection === 'sorcerer' && _computerSelection === 'sorcerer'){
-        console.log("The Sorcerer's magic resulted into a draw!");
+        return "The Sorcerer's magic resulted into a draw!";
     } else if (_playerSelection === 'sorcerer' && _computerSelection === 'fighter'){
-        console.log("The Fighter was no match against the Sorcerer!");
+        return "The Fighter was no match against the Sorcerer!";
     } else if (_playerSelection === 'sorcerer' && _computerSelection === 'summoner'){
-        console.log("The Summoner's summons vanished along with them!")
+        return "The Summoner's summons outpowered the Sorcerer!!";
+    } else if (_playerSelection === 'fighter' && _computerSelection === 'sorcerer'){
+        return 'Magic outpowered your fist!';
+    } else if (_playerSelection === 'fighter' && _computerSelection === 'fighter'){
+        return "They fought 'til the end but no one won!";
+    } else if (_playerSelection === 'fighter' && _computerSelection === 'summoner'){
+        return 'Even the summoned minions were vanished!';
+    } else if (_playerSelection === 'summoner' && _computerSelection === 'sorcerer'){
+        return 'The Summoner summoned VICTORY!';
+    } else if (_playerSelection === 'summoner' && _computerSelection === 'fighter'){
+        return 'Fighter easily destroyed Summoner!';
+    } else{
+        return 'Even with great summons it still resulted into a draw!';
     }
 }
-console.log(playRound());
+playRound()
