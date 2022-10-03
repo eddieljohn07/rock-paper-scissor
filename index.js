@@ -10,37 +10,37 @@ const playRound = (_playerSelection,_computerSelection) =>{
     _computerSelection = getComputerChoice();
     _playerSelection = prompt('Choose your character!: ').toLowerCase();
     if (_playerSelection === 'sorcerer' && _computerSelection === 'sorcerer'){
-        return "The Sorcerer's magic resulted into a draw!";
+        console.log("The Sorcerer's magic resulted into a draw!");
     } else if (_playerSelection === 'sorcerer' && _computerSelection === 'fighter'){
-        return "The Fighter was no match against the Sorcerer!";
         playerScore++
+        console.log("The enemy\'s Fighter was no match against your Sorcerer!");
     } else if (_playerSelection === 'sorcerer' && _computerSelection === 'summoner'){
-        return "The Summoner's summons outpowered the Sorcerer!!";
-        computerScore
+        computerScore++
+        console.log("Your Summoner's summons outpowered the Sorcerer!!");
     } else if (_playerSelection === 'fighter' && _computerSelection === 'sorcerer'){
-        return 'Magic outpowered your fist!';
-        computerScore
+        computerScore++
+        console.log('The enemy\'s Magic broke your Fighter\'s fist!');
     } else if (_playerSelection === 'fighter' && _computerSelection === 'fighter'){
-        return "They fought 'til the end but no one won!";
+        console.log("They fought 'til the end but no one won!");
     } else if (_playerSelection === 'fighter' && _computerSelection === 'summoner'){
-        return 'Even the summoned minions were vanished!';
         playerScore++
+        console.log('Even the summoned minions were vanished by your Fighter!');
     } else if (_playerSelection === 'summoner' && _computerSelection === 'sorcerer'){
-        return 'The Summoner summoned a win!';
-        playerScore++
+        playerScore++       
+        console.log('Your Summoner\'s summons win!');
     } else if (_playerSelection === 'summoner' && _computerSelection === 'fighter'){
-        return 'Fighter easily destroyed Summoner!';
-        computerScore
+        computerScore++
+        console.log('Enemy\'s Fighter easily destroyed your Summoner!');
     } else{
-        return 'Even with great summons it still resulted into a draw!';
+        console.log('Even with great summons it still resulted into a draw!');
     }
 }
 const game = () => {
 for (let i = 0; i < 5; i++) {
-    console.log(playRound());
+    playRound()
 }
 if (playerScore > computerScore){
-    return 'Congratulations! You\'\ve chosen the correct set of characters that led you to VICTORY!';
+    return 'Congratulations! You\'ve chosen the correct set of characters that led you to VICTORY!';
 }else if (playerScore < computerScore){
     return 'Oh no! The opponent chose a better set of characters that led you to your DEFEAT!'
 } else {
