@@ -1,3 +1,5 @@
+let playerScore = 0;
+let computerScore = 0;
 const getComputerChoice = () => {
     const arrChar = ['sorcerer', 'fighter', 'summoner'];
     const randomNumSelect = Math.floor(Math.random() * 3);
@@ -44,5 +46,5 @@ if (playerScore > computerScore){
 } else {
     return 'Woah! That was a close one, but it is still a DRAW!'
 }
-
 }
+console.log(game())
